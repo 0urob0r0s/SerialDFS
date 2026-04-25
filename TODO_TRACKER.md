@@ -4,7 +4,7 @@
 
 | Phase | Status | Notes |
 |---|---|---|
-| 0 — Scaffolding | 🔄 In progress | — |
+| 0 — Scaffolding | ✅ Done | Repo at /dos/c/serdfs/ (8.3-safe); HELLO.EXE builds and runs in DOSBox |
 | 1 — Development Environment Validation | ⬜ Not started | — |
 | 2 — Serial PTY Connectivity | ⬜ Not started | — |
 | 3 — Protocol Codec | ⬜ Not started | — |
