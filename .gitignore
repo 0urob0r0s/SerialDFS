@@ -1,0 +1,10 @@
+dos/build/
+linux/serdfsd/__pycache__/
+linux/serdfsd/tests/__pycache__/
+linux/echo/__pycache__/
+*.pyc
+*.obj
+*.map
+*.err
+*.lnk
+.serialdfs-namemap.json

@@ -1,0 +1,39 @@
+SerialDFS — Notices and Attribution
+=====================================
+
+SerialDFS is a derivative work. This file lists the upstream works whose
+code is incorporated, adapted, or used as a design reference.
+
+----------------------------------------------------------------------------
+EtherDFS
+----------------------------------------------------------------------------
+Copyright (C) Mateusz Viste
+License: GNU General Public License version 2 (GPL-2.0)
+Source:  https://etherdfs.sourceforge.net/
+
+The following EtherDFS files are incorporated into SerialDFS in adapted or
+verbatim form under the terms of the GPL-2.0:
+
+  vendor/etherdfs-baseline/etherdfs/trunk/dosstruc.h
+    -> dos/src/dosstruc.h (copied verbatim; DOS internal structure layouts)
+
+  vendor/etherdfs-baseline/etherdfs/trunk/chint.h
+  vendor/etherdfs-baseline/etherdfs/trunk/chint086.asm
+    -> dos/src/chint.h, dos/src/chint086.asm (copied verbatim; INT chain stub)
+
+  vendor/etherdfs-baseline/etherdfs/trunk/genmsg.c
+    -> dos/src/genmsg.c (adapted; message string compaction)
+
+  vendor/etherdfs-baseline/etherdfs/trunk/globals.h
+    -> dos/src/globals.h (adapted; global data layout, drive map, removed
+       packet-driver fields)
+
+  vendor/etherdfs-baseline/etherdfs/trunk/etherdfs.c
+    -> dos/src/serdfs.c (adapted; inthandler / process2f redirector skeleton
+       retained; sendquery and all pktdrv_* code replaced with serial RPC)
+
+The EtherDFS wire protocol (Ethernet framing, EDF5 ethertype, packet-driver
+interface) is NOT reproduced in SerialDFS. The serial protocol is a new,
+independent design described in protocol/spec.txt.
+
+See COPYING for the full text of the GPL-2.0.
