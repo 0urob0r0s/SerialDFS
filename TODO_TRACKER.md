@@ -5,7 +5,7 @@
 | Phase | Status | Notes |
 |---|---|---|
 | 0 — Scaffolding | ✅ Done | Repo at /dos/c/serdfs/ (8.3-safe); HELLO.EXE builds and runs in DOSBox |
-| 1 — Development Environment Validation | ⬜ Not started | — |
+| 1 — Development Environment Validation | ✅ Done | wcl, DOSBox HELLO.EXE, C:/D: mounts verified; smoke.sh 4/4; runbook documents R4 failure modes |
 | 2 — Serial PTY Connectivity | ⬜ Not started | — |
 | 3 — Protocol Codec | ⬜ Not started | — |
 | 4 — Linux Daemon Minimal Filesystem RPC | ⬜ Not started | — |
