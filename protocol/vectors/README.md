@@ -12,5 +12,5 @@ Each .hex.txt is a human-readable annotation of its fields.
   STALE.BIN   — valid PING but seq=2 (wrong seq)     FRAME_OK (drop at RPC layer)
 
 These vectors are consumed by:
-  dos/tools/CRCFUZZ.EXE             (in-DOSBox conformance test)
+  dos/tools/CRCFUZZ.EXE             (in-DOS conformance test, runs inside 86Box)
   linux/serdfsd/tests/test_frame.py (pytest)
