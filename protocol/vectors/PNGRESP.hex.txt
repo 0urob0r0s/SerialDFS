@@ -1,0 +1,20 @@
+PNGRESP.BIN — SerialDFS PING response, seq=1, status=OK
+---------------------------------------------------------
+Hex:  53 44 01 00 01 01 00 00  00 00  6e dd
+(Identical byte pattern to PNGREQ.BIN because PING has no payload
+and STATUS_OK = 0x00 = same as request status field = 0x00.
+Direction is determined by context, not wire bytes.)
+
+Offset  Hex   Field          Value
+  0     53    magic[0]       'S'
+  1     44    magic[1]       'D'
+  2     01    version        1
+  3     00    flags          0
+  4     01    seq            1
+  5     01    command        0x01 = CMD_PING
+  6     00    status         0x00 = STATUS_OK
+  7     00    reserved       0
+  8-9   0000  payload_len    0
+  10-11 6edd  crc16 (LE)     0xDD6E
+
+Expected frame_decode result: FRAME_OK, status=STATUS_OK

@@ -1,0 +1,16 @@
+TRUNC.BIN — Truncated frame (first 5 bytes only)
+-------------------------------------------------
+Hex:  53 44 01 00 01
+
+These are bytes 0-4 of a PING request.  The frame is incomplete
+(needs at least 12 bytes = HDR_SIZE + CRC_SIZE).
+
+Offset  Hex   Field          Value (partial)
+  0     53    magic[0]       'S'
+  1     44    magic[1]       'D'
+  2     01    version        1
+  3     00    flags          0
+  4     01    seq            1
+  (bytes 5-11 missing)
+
+Expected frame_decode result: FRAME_SHORT

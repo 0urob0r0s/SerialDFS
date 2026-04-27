@@ -1,0 +1,21 @@
+STALE.BIN — Valid PING frame with seq=2 (stale sequence number)
+----------------------------------------------------------------
+Hex:  53 44 01 00 02 01 00 00  00 00  13 8e
+                     ^^
+                     seq=2 (request sent with seq=1; this response
+                     is from a previous exchange and must be dropped)
+
+Offset  Hex   Field          Value
+  0     53    magic[0]       'S'
+  1     44    magic[1]       'D'
+  2     01    version        1
+  3     00    flags          0
+  4     02    seq            2  *** stale — expected 1 ***
+  5     01    command        0x01 = CMD_PING
+  6     00    status         0x00
+  7     00    reserved       0
+  8-9   0000  payload_len    0
+  10-11 138e  crc16 (LE)     0x8E13
+
+Expected frame_decode result: FRAME_OK (CRC is valid)
+RPC layer action: drop; seq != expected_seq; keep waiting

@@ -1,0 +1,20 @@
+BADCRC.BIN — PING request frame with CRC XOR'd 0xFFFF
+-------------------------------------------------------
+Derived from PNGREQ.BIN: CRC bytes flipped (0xDD6E XOR 0xFFFF = 0x2291)
+
+Hex:  53 44 01 00 01 01 00 00  00 00  91 22
+
+Offset  Hex   Field          Value
+  0     53    magic[0]       'S'
+  1     44    magic[1]       'D'
+  2     01    version        1
+  3     00    flags          0
+  4     01    seq            1
+  5     01    command        0x01 = CMD_PING
+  6     00    status         0x00
+  7     00    reserved       0
+  8-9   0000  payload_len    0
+  10-11 9122  crc16 (LE)     0x2291  *** INTENTIONALLY WRONG ***
+              correct CRC would be 0xDD6E
+
+Expected frame_decode result: FRAME_BADCRC
